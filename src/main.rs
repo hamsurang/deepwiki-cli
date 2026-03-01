@@ -1,3 +1,9 @@
+mod cli;
+
+use clap::Parser;
+use cli::Cli;
+
 fn main() {
-    println!("deepwiki-cli");
+    let cli = Cli::parse();
+    println!("{:?}", std::mem::discriminant(&cli.command));
 }
