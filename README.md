@@ -8,7 +8,7 @@ Query GitHub repository wikis via [DeepWiki](https://deepwiki.com) — without M
 
 ```bash
 brew tap hamsurang/deepwiki-cli
-brew install deepwiki
+brew install deepwiki-cli
 ```
 
 **Cargo**
