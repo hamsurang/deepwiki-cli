@@ -4,6 +4,15 @@ Query GitHub repository wikis via [DeepWiki](https://deepwiki.com) — without M
 
 ## Install
 
+**Homebrew (macOS/Linux)**
+
+```bash
+brew tap hamsurang/deepwiki-cli
+brew install deepwiki
+```
+
+**Cargo**
+
 ```bash
 cargo install deepwiki-cli
 ```
