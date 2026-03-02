@@ -5,6 +5,7 @@ edition = "2021"
 description = "CLI for DeepWiki — query GitHub repo wikis without MCP overhead"
 license = "MIT"
 repository = "https://github.com/hamsurang/deepwiki-cli"
+homepage = "https://github.com/hamsurang/deepwiki-cli"
 keywords = ["deepwiki", "github", "wiki", "mcp", "cli"]
 
 [[bin]]
@@ -22,3 +23,11 @@ tokio = { version = "1", features = ["full"] }
 [profile.dist]
 inherits = "release"
 lto = "thin"
+
+[workspace.metadata.dist]
+cargo-dist-version = "0.31.0"
+ci = ["github"]
+installers = ["homebrew"]
+tap = "hamsurang/homebrew-deepwiki-cli"
+publish-jobs = ["homebrew"]
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu"]
