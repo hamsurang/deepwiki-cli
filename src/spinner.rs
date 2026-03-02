@@ -33,7 +33,9 @@ impl Spinner {
 
 impl Drop for Spinner {
     fn drop(&mut self) {
-        self.bar.finish_and_clear();
+        if !self.bar.is_finished() {
+            self.bar.finish_and_clear();
+        }
     }
 }
 
