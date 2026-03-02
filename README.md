@@ -20,9 +20,9 @@ cargo install deepwiki-cli
 ## Usage
 
 ```bash
-deepwiki ask facebook/react "How does useEffect work?"
-deepwiki structure facebook/react
-deepwiki read facebook/react
+deepwiki-cli ask facebook/react "How does useEffect work?"
+deepwiki-cli structure facebook/react
+deepwiki-cli read facebook/react
 ```
 
 ## Token Savings
