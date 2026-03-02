@@ -17,23 +17,34 @@ async fn main() {
 
 async fn run() -> Result<()> {
     let cli = Cli::parse();
+    let (repo, query_type) = repo_and_query_type(&cli.command);
+
+    if let Ok(mock_text) = std::env::var("DEEPWIKI_CLI_MOCK_TEXT") {
+        println!(
+            "{}",
+            output::format_for_claude(&mock_text, repo, query_type)
+        );
+        return Ok(());
+    }
 
     let client = DeepWikiClient::connect().await?;
 
-    let (text, query_type) = match &cli.command {
-        Command::Ask { repo, question } => (client.ask_question(repo, question).await?, "ask"),
-        Command::Structure { repo } => (client.read_wiki_structure(repo).await?, "structure"),
-        Command::Read { repo } => (client.read_wiki_contents(repo).await?, "read"),
-    };
-
-    let repo = match &cli.command {
-        Command::Ask { repo, .. } => repo,
-        Command::Structure { repo } => repo,
-        Command::Read { repo } => repo,
+    let text = match &cli.command {
+        Command::Ask { repo, question } => client.ask_question(repo, question).await?,
+        Command::Structure { repo } => client.read_wiki_structure(repo).await?,
+        Command::Read { repo } => client.read_wiki_contents(repo).await?,
     };
 
     println!("{}", output::format_for_claude(&text, repo, query_type));
     client.cancel().await?;
 
     Ok(())
+}
+
+fn repo_and_query_type(command: &Command) -> (&str, &str) {
+    match command {
+        Command::Ask { repo, .. } => (repo, "ask"),
+        Command::Structure { repo } => (repo, "structure"),
+        Command::Read { repo } => (repo, "read"),
+    }
 }

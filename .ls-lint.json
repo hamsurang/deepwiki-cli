@@ -1,0 +1,11 @@
+{
+  "file": {
+    "*.rs": "snake_case"
+  },
+  "ignore": [
+    ".git/**",
+    ".github/**",
+    ".vscode/**",
+    "target/**"
+  ]
+}

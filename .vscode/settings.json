@@ -1,0 +1,16 @@
+{
+  "cSpell.enabled": false,
+  "cSpell.diagnosticLevel": "None",
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "editor.wordWrap": "on",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "Cargo.toml": "Cargo.lock, rust-toolchain.toml, rustfmt.toml, clippy.toml, .ls-lint.json, .typos.toml",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap",
+    "README*": "LICENSE*, CHANGELOG*, CONTRIBUTING*, CODE_OF_CONDUCT*, SECURITY.md"
+  }
+}

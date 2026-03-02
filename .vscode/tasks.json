@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cargo: test",
+      "type": "shell",
+      "command": "cargo",
+      "args": ["test"],
+      "group": "test"
+    },
+    {
+      "label": "cargo: lint",
+      "type": "shell",
+      "command": "cargo",
+      "args": ["lint"],
+      "group": "build"
+    },
+    {
+      "label": "cargo: fmt-check",
+      "type": "shell",
+      "command": "cargo",
+      "args": ["fmt-check"],
+      "group": "build"
+    }
+  ]
+}

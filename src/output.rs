@@ -18,4 +18,17 @@ mod tests {
         let result = format_for_claude("  content  \n\n", "owner/repo", "structure");
         assert!(result.ends_with("content"));
     }
+
+    #[test]
+    fn test_format_handles_empty_text() {
+        let result = format_for_claude("   \n\t  ", "owner/repo", "read");
+        assert_eq!(result, "## DeepWiki: owner/repo (read)\n\n");
+    }
+
+    #[test]
+    fn test_format_preserves_multiline_content() {
+        let input = "line1\nline2\nline3\n";
+        let result = format_for_claude(input, "owner/repo", "ask");
+        assert!(result.ends_with("line1\nline2\nline3"));
+    }
 }

@@ -1,0 +1,11 @@
+[files]
+extend-exclude = ["Cargo.lock", "target", ".omc", ".superset"]
+
+[default.extend-words]
+deepwiki = "deepwiki"
+hamsurang = "hamsurang"
+rmcp = "rmcp"
+serde = "serde"
+reqwest = "reqwest"
+clippy = "clippy"
+streamable = "streamable"
