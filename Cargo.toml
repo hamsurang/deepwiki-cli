@@ -1,6 +1,6 @@
 [package]
 name = "deepwiki-cli"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "CLI for DeepWiki — query GitHub repo wikis without MCP overhead"
 license = "MIT"
@@ -9,7 +9,7 @@ homepage = "https://github.com/hamsurang/deepwiki-cli"
 keywords = ["deepwiki", "github", "wiki", "mcp", "cli"]
 
 [[bin]]
-name = "deepwiki"
+name = "deepwiki-cli"
 path = "src/main.rs"
 
 [dependencies]
