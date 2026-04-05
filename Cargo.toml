@@ -34,5 +34,5 @@ cargo-dist-version = "0.31.0"
 ci = ["github"]
 installers = ["homebrew"]
 tap = "hamsurang/homebrew-deepwiki-cli"
-publish-jobs = ["homebrew"]
+publish-jobs = ["homebrew", "./publish-crate"]
 targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu"]
